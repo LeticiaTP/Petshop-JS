@@ -116,3 +116,11 @@ let adicionarPet = () => {
 }
 
 adicionarPet();
+
+const listarPets = () => {
+    for (let pet of pets){
+        console.log(`${pet.nome}, ${pet.tutor}, ${pet.tipo}, ${pet.raca}`);
+    }
+}
+
+listarPets();
