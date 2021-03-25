@@ -47,7 +47,7 @@ const listarPets = () => {
     }
 }*/
 
-/*VACINARPET COM I++
+//VACINARPET COM I++
 const vacinarPet = () => {
     for (let i = 0; i < pets.length; i++){
         if (pets[i].vacinado == false){
@@ -59,9 +59,9 @@ const vacinarPet = () => {
     }
 }
 
-vacinarPet();
+//vacinarPet();
 
-VACINAR PET COM LET PET OF PETS
+//VACINAR PET COM LET PET OF PETS
 const vacinarPet = () => {
     for (let pet of pets){
         if (pet.vacinado == false){
@@ -73,7 +73,7 @@ const vacinarPet = () => {
     }
 }
 
-vacinarPet();*/
+//vacinarPet();
 
 const campanhaVacina = () => {
     let i = 0;
@@ -123,25 +123,41 @@ const listarPets = () => {
     }
 }
 
-listarPets();
+//listarPets();
 
 const darBanho = (pet) => {
     pet.servicos.push('banho');
     console.log(`${pet.nome} tomou banho!`)
 }
 
-darBanho(pets[1]);
+//darBanho(pets[1]);
 
 const tosarPet = (pet) => {
     pet.servicos.push('tosa');
     console.log(`${pet.nome} está com cabelinho na régua!`)
 }
 
-tosarPet(pets[0]);
+//tosarPet(pets[0]);
 
 const apararUnhasPet = (pet) => {
     pet.servicos.push('corte de unhas');
     console.log(`${pet.nome} está de unhas aparadas!`)
 }
 
-apararUnhasPet(pets[2]);
+//apararUnhasPet(pets[2]);
+
+const apararUnhasPet = (pet) => {
+    const now = new Date();
+
+    let servico = { 
+        tipoServ: 'corte de unhas',
+        data: `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`
+    };
+    
+    pet.servicos.push(servico);
+   
+    console.log(`\n${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()} : ${pet.nome} está de unhas aparadas!`);   
+    console.log(pet.servicos);
+}
+
+apararUnhasPet(pets[1]);
