@@ -124,3 +124,24 @@ const listarPets = () => {
 }
 
 listarPets();
+
+const darBanho = (pet) => {
+    pet.servicos.push('banho');
+    console.log(`${pet.nome} tomou banho!`)
+}
+
+darBanho(pets[1]);
+
+const tosarPet = (pet) => {
+    pet.servicos.push('tosa');
+    console.log(`${pet.nome} está com cabelinho na régua!`)
+}
+
+tosarPet(pets[0]);
+
+const apararUnhasPet = (pet) => {
+    pet.servicos.push('corte de unhas');
+    console.log(`${pet.nome} está de unhas aparadas!`)
+}
+
+apararUnhasPet(pets[2]);
