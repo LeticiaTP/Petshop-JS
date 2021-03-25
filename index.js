@@ -37,11 +37,24 @@ let pets = [{
     }
 }*/
 
-const listarPets = () => {
+/*const listarPets = () => {
     for (let pet of pets){
         //template string
         console.log(`${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
     }
 }
 
-listarPets();
+listarPets();*/
+
+const vacinarPet = () => {
+    for (let i = 0; i < pets.length; i++){
+        if (pets[i].vacinado == false){
+        pets[i].vacinado = true;
+        console.log(`O pet ${pets[i].nome} foi vacinado.`)
+        } else {
+            console.log ((`O pet ${pets[i].nome} já era vacinado.`))
+        } 
+    }
+}
+
+vacinarPet();
