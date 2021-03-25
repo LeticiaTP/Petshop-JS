@@ -7,7 +7,10 @@ let pets = [{
     peso: 2,
     tutor: 'Kauã',
     vacinado: true,
-    servicos: ['banho', 'exames']
+    servicos: [
+        {tipoServ:'banho'}, {dataServ:'10/08/2020'},
+        {tipoServ:'exames'}, {dataServ:'10/08/2020'}
+    ]
 },
 {
     nome: 'Iggy',
@@ -17,7 +20,10 @@ let pets = [{
     peso: 5,
     tutor: 'Jean Pierre Polnareff',
     vacinado: false,
-    servicos: ['medicação', 'vacinação']
+    servicos: [
+        {tipoServ:'medicação'}, {dataServ:'15/05/2019'},
+        {tipoServ:'vacinação'}, {dataServ:'03/05/2020'}
+    ]
 },
 {
     nome: 'Danny',
@@ -27,10 +33,13 @@ let pets = [{
     peso: 8,
     tutor: 'Jonathan Joestar',
     vacinado: true,
-    servicos: ['banho', 'tosa']
+    servicos: [
+        {tipoServ:'banho'}, {dataServ:'08/08/2017'},
+        {tipoServ:'tosa'}, {dataServ:'10/09/2020'}
+    ]
 }]
 
-/* EXEMPLOS
+/* ListarPets
 const listarPets = () => {
     for(let i = 0; i < pets.length; i++){
         //console.log(pets[i].nome + " " + pets[i].raca);
@@ -77,62 +86,18 @@ const campanhaVacina = () => {
     console.log(`${i} pets foram vacinados nessa campanha!`);
 }
 
-//campanhaVacina();
+campanhaVacina();
 
 const vacinarPet = (pet) => {
-        if (pet.vacinado == false){
-        pet.vacinado = true;
-        console.log(`${pet.nome} foi vacinado com sucesso!`)
-        } else {
-            console.log ((`Ops, ${pet.nome} já está vacinado!`))
-        } 
+    if (pet.vacinado == false){
+    pet.vacinado = true;
+    console.log(`${pet.nome} foi vacinado com sucesso!`)
+    } else {
+        console.log ((`Ops, ${pet.nome} já está vacinado!`))
+    } 
 }
 
-//vacinarPet(pets[1]);
+vacinarPet(pets[1]);
 
-let adicionarPet = () => {
-    let pet =
-        {
-            nome: 'Alfredo',
-            tipo: 'cachorro',
-            idade: 2,
-            raca: 'rusky siberiano',
-            peso: 10,
-            tutor: 'Steve',
-            vacinado: false,
-            servicos: ['', '']    
-        };
-
-    pets.push(pet);
-}
-
-adicionarPet();
-
-const listarPets = () => {
-    for (let pet of pets){
-        console.log(`${pet.nome}, ${pet.tutor}, ${pet.tipo}, ${pet.raca}`);
-    }
-}
-
-//listarPets();
-
-const darBanho = (pet) => {
-    pet.servicos.push('banho');
-    console.log(`${pet.nome} tomou banho!`)
-}
-
-darBanho(pets[1]);
-
-const tosarPet = (pet) => {
-    pet.servicos.push('tosa');
-    console.log(`${pet.nome} está com cabelinho na régua!`)
-}
-
-tosarPet(pets[0]);
-
-const apararUnhasPet = (pet) => {
-    pet.servicos.push('corte de unhas');
-    console.log(`${pet.nome} está de unhas aparadas!`)
-}
-
-apararUnhasPet(pets[2]);
+//linha de comentario
+//comentario
