@@ -86,7 +86,7 @@ const campanhaVacina = () => {
     console.log(`${i} pets foram vacinados nessa campanha!`);
 }
 
-campanhaVacina();
+//campanhaVacina();
 
 const vacinarPet = (pet) => {
     if (pet.vacinado == false){
@@ -97,7 +97,22 @@ const vacinarPet = (pet) => {
     } 
 }
 
-vacinarPet(pets[1]);
+//vacinarPet(pets[1]);
 
-//linha de comentario
-//comentario
+let adicionarPet = () => {
+    let pet =
+        {
+            nome: 'Alfredo',
+            tipo: 'cachorro',
+            idade: 2,
+            raca: 'rusky siberiano',
+            peso: 10,
+            tutor: 'Steve',
+            vacinado: false,
+            servicos: ['', '']    
+        };
+
+    pets.push(pet);
+}
+
+adicionarPet();
