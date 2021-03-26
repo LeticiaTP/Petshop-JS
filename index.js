@@ -1,54 +1,19 @@
 const nomePetshop = "PETSHOP JS";
-let pets = [{
-    nome: 'Tofu',
-    tipo: 'gato',
-    idade: 1,
-    raca: 'ragdoll',
-    peso: 2,
-    tutor: 'Kauã',
-    vacinado: true,
-    servicos: [
-        {tipoServ:'banho'}, {dataServ:'10/08/2020'},
-        {tipoServ:'exames'}, {dataServ:'10/08/2020'}
-    ]
-},
-{
-    nome: 'Iggy',
-    tipo: 'cachorro',
-    idade: 3,
-    raca: 'Boston-terrier',
-    peso: 5,
-    tutor: 'Jean Pierre Polnareff',
-    vacinado: false,
-    servicos: [
-        {tipoServ:'medicação'}, {dataServ:'15/05/2019'},
-        {tipoServ:'vacinação'}, {dataServ:'03/05/2020'}
-    ]
-},
-{
-    nome: 'Danny',
-    tipo: 'cachorro',
-    idade: 2,
-    raca: 'Harlequin Great Dane',
-    peso: 8,
-    tutor: 'Jonathan Joestar',
-    vacinado: true,
-    servicos: [
-        {tipoServ:'banho'}, {dataServ:'08/08/2017'},
-        {tipoServ:'tosa'}, {dataServ:'10/09/2020'}
-    ]
-}]
+let bancoDados = require ("./bancoDados.json");
+let pets = bancoDados.pets;
 
-/* ListarPets
-const listarPets = () => {
-    for(let i = 0; i < pets.length; i++){
-        //console.log(pets[i].nome + " " + pets[i].raca);
-        console.log(`O nome do pet é ${pets[i].nome}`);
-    }
-}*/
 
-//VACINARPET COM I++
-const vacinarPet = () => {
+ const listarPets = () => {
+     for(let i = 0; i < pets.length; i++){
+         //console.log(pets[i].nome + " " + pets[i].raca);
+         console.log(`O nome do pet é ${pets[i].nome} e ele ${pets[i].vacinado ? "foi vacinado" : "não foi vacinado"}`);
+     }
+ }
+
+ listarPets();
+
+// VACINARPET COM I++
+const vacinarPet1 = () => {
     for (let i = 0; i < pets.length; i++){
         if (pets[i].vacinado == false){
         pets[i].vacinado = true;
@@ -59,10 +24,10 @@ const vacinarPet = () => {
     }
 }
 
-//vacinarPet();
+// vacinarPet1();
 
 //VACINAR PET COM LET PET OF PETS
-const vacinarPet = () => {
+const vacinarPet2 = () => {
     for (let pet of pets){
         if (pet.vacinado == false){
             pet.vacinado = true;
@@ -73,7 +38,7 @@ const vacinarPet = () => {
     }
 }
 
-//vacinarPet();
+//vacinarPet2();
 
 const campanhaVacina = () => {
     let i = 0;
@@ -88,7 +53,7 @@ const campanhaVacina = () => {
 
 //campanhaVacina();
 
-const vacinarPet = (pet) => {
+const vacinarPet3 = (pet) => {
     if (pet.vacinado == false){
     pet.vacinado = true;
     console.log(`${pet.nome} foi vacinado com sucesso!`)
@@ -97,7 +62,7 @@ const vacinarPet = (pet) => {
     } 
 }
 
-//vacinarPet(pets[1]);
+//vacinarPet3(pets[1]);
 
 let adicionarPet = () => {
     let pet =
@@ -117,13 +82,14 @@ let adicionarPet = () => {
 
 adicionarPet();
 
-const listarPets = () => {
+// listar pets com LET PET OF PETS
+const listarPets2 = () => {
     for (let pet of pets){
         console.log(`${pet.nome}, ${pet.tutor}, ${pet.tipo}, ${pet.raca}`);
     }
 }
 
-//listarPets();
+// //listarPets2();
 
 const darBanho = (pet) => {
     pet.servicos.push('banho');
@@ -146,7 +112,8 @@ const apararUnhasPet = (pet) => {
 
 //apararUnhasPet(pets[2]);
 
-const apararUnhasPet = (pet) => {
+//apararUnhasPet com data
+const apararUnhasPet2 = (pet) => {
     const now = new Date();
 
     let servico = { 
@@ -160,4 +127,12 @@ const apararUnhasPet = (pet) => {
     console.log(pet.servicos);
 }
 
-apararUnhasPet(pets[1]);
+// apararUnhasPet2(pets[1]);
+
+const atenderCliente = (pet, servico) => {
+    console.log(`Olá, ${pet.nome}`);
+    servico ? servico(pet) : console.log("Só vim dar uma olhadinha");
+    console.log(`Tchau, até mais!`);
+}
+
+atenderCliente(pets[2], darBanho);
