@@ -70,7 +70,7 @@ const vacinarPet3 = (pet) => {
     } 
 }
 
-//vacinarPet3(pets[1]);
+//vacinarPet3(bancoDados.pets[1]);
 
 const adicionarPet = novoPet => {
     bancoDados.pets.push(novoPet);
@@ -102,21 +102,21 @@ const darBanho = (pet) => {
     console.log(`${pet.nome} tomou banho!`)
 }
 
-//darBanho(pets[1]);
+//darBanho(bancoDados.pets[1]);
 
 const tosarPet = (pet) => {
     pet.servicos.push('tosa');
     console.log(`${pet.nome} está com cabelinho na régua!`)
 }
 
-//tosarPet(pets[0]);
+//tosarPet(bancoDados.pets[0]);
 
 const apararUnhasPet = (pet) => {
     pet.servicos.push('corte de unhas');
     console.log(`${pet.nome} está de unhas aparadas!`)
 }
 
-//apararUnhasPet(pets[2]);
+//apararUnhasPet(bancoDados.pets[2]);
 
 //apararUnhasPet com data
 const apararUnhasPet2 = (pet) => {
@@ -133,4 +133,11 @@ const apararUnhasPet2 = (pet) => {
     console.log(pet.servicos);
 }
 
-// apararUnhasPet2(pets[1]);
+// apararUnhasPet2(bancoDados.pets[1]);
+
+const atenderCliente = (pet, servicos) => {
+    console.log(`Olá, ${pet.nome}!`); 
+    servicos(pet);
+    console.log(`Tchau. Até mais!`)
+}
+atenderCliente(bancoDados.pets[1], apararUnhasPet);
