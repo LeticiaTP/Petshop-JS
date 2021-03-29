@@ -4,6 +4,7 @@ const fs = require('fs');
 let bancoDados = fs.readFileSync('./bancoDados.json')
 
 bancoDados = JSON.parse(bancoDados);
+JSON.stringify(bancoDados, null, 2)
 
 const atualizarBanco = () => {
     let petsAtualizado = JSON.stringify(bancoDados);
@@ -140,4 +141,4 @@ const atenderCliente = (pet, servicos) => {
     servicos(pet);
     console.log(`Tchau. Até mais!`)
 }
-atenderCliente(bancoDados.pets[1], apararUnhasPet);
+//atenderCliente(bancoDados.pets[1], apararUnhasPet);
