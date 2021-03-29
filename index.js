@@ -78,15 +78,15 @@ const adicionarPet = novoPet => {
     console.log(`${novoPet.nome} foi adicionado com sucesso!`);
 }
 
-adicionarPet({
-    "nome": "Alfredo",
-    "tipo": "cachorro",
-    "idade": 2,
-    "raca": "rusky siberiano",
-    "peso": 10,
-    "tutor": "Steve",
-    "servicos": []
-});
+// adicionarPet({
+//     "nome": "Alfredo",
+//     "tipo": "cachorro",
+//     "idade": 2,
+//     "raca": "rusky siberiano",
+//     "peso": 10,
+//     "tutor": "Steve",
+//     "servicos": []
+// });
 
 // listar pets com LET PET OF PETS
 const listarPets2 = () => {
