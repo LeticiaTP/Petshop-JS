@@ -4,7 +4,7 @@ const fs = require('fs');
 let bancoDados = fs.readFileSync('./bancoDados.json')
 
 bancoDados = JSON.parse(bancoDados);
-JSON.stringify(bancoDados, null, 2)
+JSON.stringify(bancoDados, null, 2);
 
 const atualizarBanco = () => {
     let petsAtualizado = JSON.stringify(bancoDados);
@@ -142,3 +142,57 @@ const atenderCliente = (pet, servicos) => {
     console.log(`Tchau. Até mais!`)
 }
 //atenderCliente(bancoDados.pets[1], apararUnhasPet);
+
+const adicionarPet2 = novoPet => {
+    bancoDados.pets.push(novoPet);
+    atualizarBanco();
+    console.log(`${novoPet.nome} foi adicionado com sucesso!`);
+}
+
+//adicionarPet2();
+
+const campanhaVacina2021 = () => {
+    console.log("Campanha de vacina 2021");
+    console.log("vacinando...");
+
+    let petVacinadosCampanha = 0;
+
+    bancoDados.pets = bancoDados.pets.map((pet) => {
+        if (!pet.vacinado) {
+            vacinarPet2(pet);
+            petVacinadosCampanha++;
+        }
+
+        return pet;
+    });
+
+    // atualizarBanco();
+    console.log(`${petVacinadosCampanha} pets foram vacinados nessa campanha!`);
+};
+
+//campanhaVacina2021();
+
+const buscarPet = (nomePet) => {
+
+    let petEncontrado = bancoDados.pets.find((pet) => {
+        return pet.nome == nomePet;
+    });
+
+    return petEncontrado ? petEncontrado : `Nenhum pet encontrado com nome ${nomePet}`;
+}
+
+//buscarPet();
+
+const filtrarTipoPet = (tipoPet) => {
+    // && E - AND
+    // || OU - OR
+    // == verifica valores iguais
+    // === verifica valores e tipos iguais
+    let petsEncontrados = bancoDados.pets.filter((pet) => {
+        return pet.tipo == tipoPet;
+    });
+
+    return petsEncontrados;
+}
+
+//filtrarTipoPet();
