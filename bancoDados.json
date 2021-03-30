@@ -76,7 +76,20 @@
       "raca": "rusky siberiano",
       "peso": 10,
       "tutor": "Steve",
-      "servicos": []
+      "servicos": [
+        {
+          "nome": "banho",
+          "data": "30-03-2021"
+        },
+        {
+          "nome": "tosa",
+          "data": "30-03-2021"
+        },
+        {
+          "nome": "corte de unhas",
+          "data": "30-03-2021"
+        }
+      ]
     },
     {
       "nome": "Floquinho",

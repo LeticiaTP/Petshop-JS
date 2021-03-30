@@ -14,7 +14,7 @@ const atualizarBanco = () => {
      for(let i = 0; i < bancoDados.pets.length; i++){
          console.log(`O nome do pet é ${bancoDados.pets[i].nome} e ele ${bancoDados.pets[i].vacinado ? "foi vacinado" : "não foi vacinado"}`);
      }
- }
+}
 //listarPets();;
 
 const vacinarPet = pet => {
@@ -43,23 +43,35 @@ const adicionarPet = novoPet => {
 //     "servicos": []
 // });
 
-const darBanho = (pet) => {
-    pet.servicos.push('banho');
-    console.log(`${pet.nome} tomou banho!`)
-}
-//darBanho(bancoDados.pets[1]);
+const darBanho = pet => {
+    pet.servicos.push({
+        'nome':'banho',
+        'data': moment().format('DD-MM-YYYY')
+    });
+    atualizarBanco();
+    console.log(`${pet.nome} está de banho tomado!`);
+};
+//darBanho(bancoDados.pets[3]);
 
-const tosarPet = (pet) => {
-    pet.servicos.push('tosa');
-    console.log(`${pet.nome} está com cabelinho na régua!`)
-}
-//tosarPet(bancoDados.pets[0]);
+const tosarPet = pet => {
+    pet.servicos.push({
+        'nome':'tosa',
+        'data': moment().format('DD-MM-YYYY')
+    });
+    atualizarBanco();
+    console.log(`${pet.nome} está com cabelinho na régua!`);
+};
+//tosarPet(bancoDados.pets[3]);
 
-const apararUnhasPet = (pet) => {
-    pet.servicos.push('corte de unhas');
-    console.log(`${pet.nome} está de unhas aparadas!`)
-}
-//apararUnhasPet(bancoDados.pets[2]);
+const apararUnhas = pet => {
+    pet.servicos.push({
+        'nome':'corte de unhas',
+        'data': moment().format('DD-MM-YYYY')
+    });
+    atualizarBanco();
+    console.log(`${pet.nome} está de unhas aparadas!`);
+};
+//apararUnhas(bancoDados.pets[3]);
 
 const atenderCliente = (pet, servicos) => {
     console.log(`Olá, ${pet.nome}!`); 
